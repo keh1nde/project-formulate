@@ -23,25 +23,35 @@ def handle_file():
 
 def handle_processing():
     global FILE_CACHE, QUEUE_CACHE, TF_SAVE, UPLOAD_CACHE
-    if not QUEUE_CACHE or not FILE_CACHE or not TF_SAVE or not UPLOAD_CACHE:
-        return generate_error_response('No uploads found')
+    """ Error handling """
+    if not QUEUE_CACHE or not UPLOAD_CACHE:
+        return generate_error_response('Backend: No uploads found')
+    if not TF_SAVE or not FILE_CACHE:
+        return generate_error_response('Backend: Cache not properly initialized')
+
+    """ Move files from UPLOAD to QUEUE"""
     files = os.listdir(UPLOAD_CACHE)
     for file in files:
         file = os.path.basename(file)
         file, error = move_to(file, QUEUE_CACHE)
         if file is None and error is not None:
             return generate_error_response(error)
+
+    """ Begin processing files """
     files = os.listdir(QUEUE_CACHE)
     for file in files:
         preprocess_image(file)
+    # Return success
+
+
+@app.route('/history', method=['GET'])
+def handle_history():
+    pass
 
 
 
-
-
-    """Returns a JSON response for errors"""
+"""Returns a JSON response for errors"""
 
 
 def generate_error_response(message):
-
     return jsonify({'success': False, 'error': message}), 400
