@@ -1,19 +1,22 @@
 import os
 import cv2
 import pytesseract
+from backend.utils.file_operations import create_directory
 
-UPLOAD_DIR = 'backend/cache/uploads'
+UPLOAD_DIR = '/cache/uploads'
 FILE_CACHE = '/cache/file-history'
 files = os.listdir(UPLOAD_DIR)
 
 
 """
-
+@:parameter file_directory: Path to File
 Pre-processes images
 """
 
 
 def preprocess_image(file_directory):
+    create_directory(FILE_CACHE)
+
     for file in files:
         img = cv2.imread(os.path.join(UPLOAD_DIR, file))
         # Gray-scaling:
@@ -30,6 +33,7 @@ def preprocess_image(file_directory):
         opening = cv2.morphologyEx(img, cv2.MORPH_OPEN, kernel, iterations=1)
         invert = 255 - opening
 
+
         # We save the image to ocr/filecache
         cv2.imwrite(os.path.join(FILE_CACHE, "image.jpg"), invert)
 
@@ -42,7 +46,3 @@ def extract_text(image_path):
     # Use pytesseract to get data
     text = pytesseract.image_to_string(image_path, lang='eng', config='--psm 6')
     return text
-
-
-# The files in file-cache will stay there to allow data to be viewed/fetched manually if needed.
-# On close, the directory will be destroyed.
