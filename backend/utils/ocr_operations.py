@@ -34,8 +34,9 @@ def preprocess_image(file_directory, file_cache):
         invert = 255 - opening
 
         # We save the image to cache/filecache
-        cv2.imwrite(os.path.join(FILE_CACHE, "image.jpg"), invert)
-        cv2.imwrite(os.path.join(file_cache, os.path.join(file_cache, file_directory)), invert)
+        # cv2.imwrite(os.path.join(FILE_CACHE, "image.jpg"), invert)
+        cv2.imwrite(os.path.join(file_cache, file_directory), invert)
+
 
 
 """
