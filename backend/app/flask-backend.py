@@ -1,26 +1,47 @@
+import os
+
 from flask import Flask, render_template, request, redirect, url_for, jsonify
-from werkzeug.utils import secure_filename
-from backend.utils.file_operations import allowed_file, create_directory, cleanup_cache, save_uploaded_file
+from backend.utils.file_operations import allowed_file, create_directory, cleanup_cache, save_uploaded_file, move_to
 from backend.utils.ocr_operations import preprocess_image, extract_text
 
 app = Flask(__name__)
 
-file_cache = '/cache/file-history'
+FILE_CACHE = '/cache/file-history'
+UPLOAD_CACHE = '/cache/upload-cache'
+QUEUE_CACHE = '/cache/queue-cache'
+TF_SAVE = '/cache/text-file_save'
 
 
 @app.route('/upload', method=['POST'])
 def handle_file():
     if request.method == 'POST':
-        file_path, error = save_uploaded_file()
-    if error:
-        return error
-
-    # Preprocessing
-    processed_image_path = preprocess_image(file_path)
+        file_path, error = save_uploaded_file(destination=UPLOAD_CACHE)
+        if file_path is None and error is not None:
+            return generate_error_response(error)
+    handle_processing()
 
 
+def handle_processing():
+    global FILE_CACHE, QUEUE_CACHE, TF_SAVE, UPLOAD_CACHE
+    if not QUEUE_CACHE or not FILE_CACHE or not TF_SAVE or not UPLOAD_CACHE:
+        return generate_error_response('No uploads found')
+    files = os.listdir(UPLOAD_CACHE)
+    for file in files:
+        file = os.path.basename(file)
+        file, error = move_to(file, QUEUE_CACHE)
+        if file is None and error is not None:
+            return generate_error_response(error)
+    files = os.listdir(QUEUE_CACHE)
+    for file in files:
+        preprocess_image(file)
 
 
 
 
-# I still want to include errors for certain exceptions (ex. uploading files that are not supported)
+
+    """Returns a JSON response for errors"""
+
+
+def generate_error_response(message):
+
+    return jsonify({'success': False, 'error': message}), 400
