@@ -14,7 +14,7 @@ Pre-processes images
 """
 
 
-def preprocess_image(file_directory):
+def preprocess_image(file_directory, file_cache):
     create_directory(FILE_CACHE)
 
     for file in files:
@@ -33,13 +33,14 @@ def preprocess_image(file_directory):
         opening = cv2.morphologyEx(img, cv2.MORPH_OPEN, kernel, iterations=1)
         invert = 255 - opening
 
-
-        # We save the image to ocr/filecache
+        # We save the image to cache/filecache
         cv2.imwrite(os.path.join(FILE_CACHE, "image.jpg"), invert)
+        cv2.imwrite(os.path.join(file_cache, os.path.join(file_cache, file_directory)), invert)
 
-    """
-    Extracts text using TesseractOCR
-    """
+
+"""
+Extracts text using TesseractOCR
+"""
 
 
 def extract_text(image_path):
