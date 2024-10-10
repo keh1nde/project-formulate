@@ -92,3 +92,5 @@ def move_to(file_name, destination):
         return None, 'Backend: Path does not exist'
     else:
         return os.rename(file_name, destination), None
+
+# Add file history methods
