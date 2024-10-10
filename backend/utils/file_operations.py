@@ -19,9 +19,9 @@ def create_directory(file_directory):
         os.mkdir(file_directory)
         print('Cache successfully created')
     except FileExistsError:
-        print("The cache already exists")
+        print("The directory already exists")
     except PermissionError:
-        print(f"The cache cannot be created, please check permissions")
+        print(f"This directory cannot be created, please check permissions")
     except Exception as e:
         print(f"An error has occurred: '{e}'")
 
@@ -31,18 +31,19 @@ Saves uploaded files in queue
 """
 
 
-def save_uploaded_file():
+def save_uploaded_file(destination):
+    create_directory(destination)
     if 'file' not in request.files:
-        return None, 'No file part'
+        return None, 'No file found.'
     file = request.files['file']
     if file.filename == '':
-        return None, 'No file selected'
-
+        return None, 'No file selected.'
+    if not allowed_file(file.filename):
+        return None, 'Path contains a file that is not allowed.'
     # Securing filename
     filename = secure_filename(file.filename)
-    file_path = os.path.join(UPLOAD_FOLDER, filename)
+    file_path = os.path.join(destination, filename)
 
-    create_directory('cache/queue')
     file.save(file_path)
 
     return file_path, None
@@ -77,3 +78,17 @@ def cleanup_cache(directory):
     except Exception as e:
         print(f"An error has occurred: {e}")
 
+
+"""
+
+Moves specified file into specified directory
+"""
+
+
+def move_to(file_name, destination):
+    if not os.path.exists(file_name):
+        return None, 'Backend: File does not exist, please check name'
+    elif not os.path.exists(destination):
+        return None, 'Backend: Path does not exist'
+    else:
+        return os.rename(file_name, destination), None
