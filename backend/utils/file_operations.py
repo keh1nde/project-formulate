@@ -1,5 +1,6 @@
 import os
 from flask import request
+import time
 from werkzeug.utils import secure_filename
 
 UPLOAD_FOLDER = "cache/uploads"
@@ -49,7 +50,6 @@ def save_uploaded_file(destination):
     return file_path, None
 
 
-
 """
 @:parameter filename
 Determines if the file is safe
@@ -87,10 +87,86 @@ Moves specified file into specified directory
 
 def move_to(file_name, destination):
     if not os.path.exists(file_name):
-        return None, 'Backend: File does not exist, please check name'
+        return None, 'Backend: Path does not exist, please check name'
     elif not os.path.exists(destination):
         return None, 'Backend: Path does not exist'
     else:
         return os.rename(file_name, destination), None
 
-# Add file history methods
+
+""" History getters and setters """
+
+"""
+Creates and returns an archive directory for use with history.
+"""
+
+
+def create_archive_directory(destination, dir_name):
+    try:
+        required_path_files = ['image-cache', 'data.txt', 'main.txt']
+        if dir_name is None:
+            dir_name = 'Untitled'
+        current_time = time.strftime("%Y-%m-%d_%H-%M")
+        directory_name = f"{dir_name}_{current_time}"
+
+        n_path = os.path.join(destination, directory_name)
+
+        os.makedirs(n_path)
+
+        for file in required_path_files:
+            os.makedirs(file)
+            f = open(file)
+            if file is not required_path_files[0]:
+                f.write(f"File created {current_time}")
+
+        return n_path, None
+    except FileExistsError:
+        current_time = time.strftime("%Y-%m-%d_%H-%M")
+        directory_name = f"{dir_name}_{current_time}"
+        n_path = os.path.join(destination, directory_name)
+        return n_path
+    except PermissionError:
+        return None, "Cannot create path, please check permissions"
+    except Exception as e:
+        return None, f"An error has occured: {e}"
+
+def read_image_history(image_directory):
+    try:
+        files = os.listdir(image_directory)
+        for file in files:
+            pass # We will return files to the frontend file-wise
+    except FileNotFoundError:
+        return None, 'This is not a image history directory.'
+    except PermissionError:
+        return None, 'Cannot complete operation, please check permissions'
+    except Exception as e:
+        return None, f"An Error has occurred: {e}"
+
+
+def write_image_history(image_directory):
+    pass
+    """When the pre-processor & processor are done with their work, they will write to the file cache using
+    this helper file"""
+
+
+def read_details(directory):
+    try:
+        files = os.path.join(directory, 'main.txt')
+        # Parse the file for details
+    except FileNotFoundError:
+        return None, "No main.txt found in directory."
+    except PermissionError:
+        return None, 'Cannot complete operation, please check permissions'
+    except Exception as e:
+        return None, f"An error has occurred: {e}"
+
+def read_data(directory):
+    try:
+        files = os.path.join(directory, 'data.txt')
+        # Parse the file for details
+    except FileNotFoundError:
+        return None, "No data.txt found in directory"
+    except PermissionError:
+        return None, 'Cannot complete operation, please check permissions'
+    except Exception as e:
+        return None, f"An error has occurred: {e}"
