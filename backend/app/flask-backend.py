@@ -1,36 +1,26 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, jsonify
 from werkzeug.utils import secure_filename
-import os
+from backend.utils.file_operations import allowed_file, create_directory, cleanup_cache, save_uploaded_file
+from backend.utils.ocr_operations import preprocess_image, extract_text
 
 app = Flask(__name__)
 
-app.config['UPLOAD_FOLDER'] = 'uploads/'
-
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
+file_cache = '/cache/file-history'
 
 
-def allowed_file(filename):
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
-
-@app.route('/upload', methods=['GET', 'POST'])
-def upload_file():
+@app.route('/upload', method=['POST'])
+def handle_file():
     if request.method == 'POST':
-        if 'file' not in request.files:
-            flash("No file part")
-            # Send error exception
-    file = request.files['file']
-    if file.filename == '':
-        flash('No selected file')
-        # Send error exception
-    if file and allowed_file(file.filename):
-        filename = secure_filename(file.filename)
+        file_path, error = save_uploaded_file()
+    if error:
+        return error
+
+    # Preprocessing
+    processed_image_path = preprocess_image(file_path)
+
+
 
 
 
 
 # I still want to include errors for certain exceptions (ex. uploading files that are not supported)
-
-if __name__ == '__main__':
-    pass
