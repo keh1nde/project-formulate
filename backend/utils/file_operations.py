@@ -1,5 +1,5 @@
 import os
-from flask import request
+from flask import request, jsonify
 import time
 from werkzeug.utils import secure_filename
 
@@ -115,26 +115,28 @@ def create_archive_directory(destination, dir_name):
 
         for file in required_path_files:
             os.makedirs(file)
-            f = open(file)
+            f = open(file, "a")
             if file is not required_path_files[0]:
                 f.write(f"File created {current_time}")
+                f.write(f"File edited {current_time}")
 
         return n_path, None
     except FileExistsError:
         current_time = time.strftime("%Y-%m-%d_%H-%M")
         directory_name = f"{dir_name}_{current_time}"
         n_path = os.path.join(destination, directory_name)
-        return n_path
+        return n_path, None
     except PermissionError:
         return None, "Cannot create path, please check permissions"
     except Exception as e:
-        return None, f"An error has occured: {e}"
+        return None, f"An error has occurred: {e}"
+
 
 def read_image_history(image_directory):
     try:
         files = os.listdir(image_directory)
-        for file in files:
-            pass # We will return files to the frontend file-wise
+        image_files = [file for file in files if file.endswith(('.png', '.jpg', '.jpeg'))]
+        return image_files, None
     except FileNotFoundError:
         return None, 'This is not a image history directory.'
     except PermissionError:
@@ -143,10 +145,21 @@ def read_image_history(image_directory):
         return None, f"An Error has occurred: {e}"
 
 
-def write_image_history(image_directory):
-    pass
+def write_data(directory, image_name, file_name, data):
     """When the pre-processor & processor are done with their work, they will write to the file cache using
     this helper file"""
+    try:
+        f = open(directory, "a")
+        f.write(f"Image: {image_name}\n")
+        f.write(f"Extracted Text for {image_name}: ")
+        f.write(f"{data}\n")
+        return directory, None
+    except FileNotFoundError:
+        return None, "Directory does not exist"
+    except PermissionError:
+        return None, "Cannot complete operations, please check permissions"
+    except Exception as e:
+        return None, f"An error has occurred: {e}"
 
 
 def read_details(directory):
@@ -159,6 +172,7 @@ def read_details(directory):
         return None, 'Cannot complete operation, please check permissions'
     except Exception as e:
         return None, f"An error has occurred: {e}"
+
 
 def read_data(directory):
     try:
