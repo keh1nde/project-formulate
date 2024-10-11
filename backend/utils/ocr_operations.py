@@ -1,7 +1,7 @@
 import os
 import cv2
 import pytesseract
-from backend.utils.file_operations import create_directory
+from backend.utils.file_operations import create_directory, write_data
 
 UPLOAD_DIR = '/cache/uploads'
 FILE_CACHE = '/cache/file-history'
@@ -35,8 +35,8 @@ def preprocess_image(file_directory, file_cache):
 
         # We save the image to cache/filecache
         # cv2.imwrite(os.path.join(FILE_CACHE, "image.jpg"), invert)
-        cv2.imwrite(os.path.join(file_cache, file_directory), invert)
-
+        path = os.path.join(file_directory, file_cache)
+        cv2.imwrite(path, invert)
 
 
 """
@@ -47,4 +47,4 @@ Extracts text using TesseractOCR
 def extract_text(image_path):
     # Use pytesseract to get data
     text = pytesseract.image_to_string(image_path, lang='eng', config='--psm 6')
-    return text
+    return write_data(image_path)
