@@ -3,23 +3,17 @@ import cv2
 import pytesseract
 from backend.utils.file_operations import create_directory, write_data
 
-UPLOAD_DIR = '/cache/uploads'
-FILE_CACHE = '/cache/file-history'
-files = os.listdir(UPLOAD_DIR)
-
-
-"""
-@:parameter file_directory: Path to File
-Pre-processes images
-"""
-
 
 def preprocess_image(file_directory, file_cache):
-    create_directory(FILE_CACHE)
+    if not os.path.exists(file_directory):
+        return None, f"Preprocessor: File directory {file_directory} does not exist"
+    if not os.path.exists(file_cache):
+        return None, f"Preprocessor: File directory {file_cache} does not exist"
 
+    files = os.listdir(file_directory)
     for file in files:
         try:
-            img = cv2.imread(os.path.join(UPLOAD_DIR, file))
+            img = cv2.imread(os.path.join(file_directory, file))
             # Gray-scaling:
             img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
@@ -52,6 +46,11 @@ def preprocess_image(file_directory, file_cache):
         except Exception as e:
             return None, f"An error has occurred: {e}"
 
+        """
+        @:parameter file_directory: Path to File
+        Pre-processes images
+        """
+
 
 """
 Extracts text using TesseractOCR
@@ -69,4 +68,3 @@ def extract_text(image_path):
         return text, None
     except Exception as e:
         return None, f"An error has occurred: {e}"
-
