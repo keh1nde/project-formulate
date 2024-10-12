@@ -16,7 +16,7 @@ TF_SAVE = '/cache/text-file_save'
 def handle_file():
     if request.method == 'POST':
         file_path, error = save_uploaded_file(destination=UPLOAD_CACHE)
-        if file_path is None and error is not None:
+        if error:
             return generate_error_response(error)
     handle_processing()
 
@@ -27,14 +27,14 @@ def handle_processing():
     if not QUEUE_CACHE or not UPLOAD_CACHE:
         return generate_error_response('Backend: No uploads found')
     if not TF_SAVE or not FILE_CACHE:
-        return generate_error_response('Backend: Cache not properly initialized')
+        return generate_error_response('Backend: Cache not properly initialized. Try again')
 
     """ Move files from UPLOAD to QUEUE"""
     files = os.listdir(UPLOAD_CACHE)
     for file in files:
         file = os.path.basename(file)
         file, error = move_to(file, QUEUE_CACHE)
-        if file is None and error is not None:
+        if error:
             return generate_error_response(error)
 
     """ Begin processing files """
@@ -44,14 +44,21 @@ def handle_processing():
     # Return success
 
 
+@app.route('/display', method=['GET'])
+def handle_display():
+    pass
+
+
+""" This method will return the images and text from the helper files once they exist"""
+
+
 @app.route('/history', method=['GET'])
 def handle_history():
     pass
 
 
+def generate_error_response(message):
+    return jsonify({'success': False, 'error': message}), 400
 
 """Returns a JSON response for errors"""
 
-
-def generate_error_response(message):
-    return jsonify({'success': False, 'error': message}), 400
