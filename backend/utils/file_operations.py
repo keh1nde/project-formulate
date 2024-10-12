@@ -1,5 +1,7 @@
 import os
-from flask import request, jsonify
+import shutil
+
+from flask import request
 import time
 from werkzeug.utils import secure_filename
 
@@ -8,31 +10,25 @@ CACHE_FOLDER = "cache/file-history"
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
-"""
-@:parameter upload_dir: Chosen directory for the uploads folder
-@:parameter file_cache: Chosen directory for the file-cache folder
-Creates a cache directory located in /backend
-"""
-
 
 def create_directory(file_directory):
+    """
+    Creates a cache directory located in /backend
+    This function initializes directories only.
+    """
     try:
         os.mkdir(file_directory)
-        print('Cache successfully created')
+        return None
     except FileExistsError:
-        print("The directory already exists")
+        return "The directory already exists"
     except PermissionError:
-        print(f"This directory cannot be created, please check permissions")
+        return f"This directory cannot be created, please check permissions"
     except Exception as e:
-        print(f"An error has occurred: '{e}'")
-
-
-"""
-Saves uploaded files in queue
-"""
+        return f"An error has occurred: '{e}'"
 
 
 def save_uploaded_file(destination):
+    """ Saves uploaded files in queue """
     create_directory(destination)
     if 'file' not in request.files:
         return None, 'No file found.'
@@ -50,42 +46,53 @@ def save_uploaded_file(destination):
     return file_path, None
 
 
-"""
-@:parameter filename
-Determines if the file is safe
-"""
-
-
 def allowed_file(filename):
+    """
+    Determines if the file is safe
+    """
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-"""
-
-@:parameter directory
-Destroys selected directory.
-"""
+def initialize_cache(dir_name):
+    """Initializes a cache for use with the backend"""
+    required_root_files = ['file-queue', 'file-uploads', 'tf_save']
+    try:
+        error = create_directory(dir_name)
+        if error:
+            return error
+        for root_file in required_root_files:
+            n_path = os.path.join(dir_name, root_file)
+            os.makedirs(n_path)
+        return None
+    except Exception as e:
+        return f"An error has occurred: {e}"
 
 
 def cleanup_cache(directory):
+    """Destroys cache on app close."""
     try:
-        os.remove(directory)
-    except FileExistsError:
-        print("Directory does not exist")
+        if os.path.exists(directory):
+            files = os.listdir(directory)
+            if not files:
+                os.rmdir(directory)
+                return None
+            else:
+                with shutil.rmtree:
+                    shutil.rmtree(directory)
+                return None
+
+        os.rmdir(directory)
+    except FileNotFoundError:
+        return "Directory does not exist"
     except PermissionError:
-        print("Unable to clean up, please check permissions")
+        return "Unable to clean up, please check permissions"
     except Exception as e:
-        print(f"An error has occurred: {e}")
-
-
-"""
-
-Moves specified file into specified directory
-"""
+        return f"An error has occurred: {e}"
 
 
 def move_to(file_name, destination):
+    """Moves specified file into specified directory"""
     if not os.path.exists(file_name):
         return None, 'Backend: Path does not exist, please check name'
     elif not os.path.exists(destination):
@@ -96,14 +103,12 @@ def move_to(file_name, destination):
 
 """ History getters and setters """
 
-"""
-Creates and returns an archive directory for use with history.
-"""
-
 
 def create_archive_directory(destination, dir_name):
+    """Creates and returns an archive directory for use with history."""
     try:
         required_path_files = ['image-cache', 'data.txt', 'main.txt']
+
         if dir_name is None:
             dir_name = 'Untitled'
         current_time = time.strftime("%Y-%m-%d_%H-%M")
@@ -162,18 +167,6 @@ def write_data(directory, image_name, file_name, data):
         return None, f"An error has occurred: {e}"
 
 
-def read_details(directory):
-    try:
-        files = os.path.join(directory, 'main.txt')
-        # Parse the file for details
-    except FileNotFoundError:
-        return None, "No main.txt found in directory."
-    except PermissionError:
-        return None, 'Cannot complete operation, please check permissions'
-    except Exception as e:
-        return None, f"An error has occurred: {e}"
-
-
 def read_data(directory):
     try:
         files = os.path.join(directory, 'data.txt')
@@ -184,3 +177,18 @@ def read_data(directory):
         return None, 'Cannot complete operation, please check permissions'
     except Exception as e:
         return None, f"An error has occurred: {e}"
+
+
+def read_details(directory):
+    try:
+        files = os.path.join(directory, 'main.txt')
+        # Parse the file for details
+    except FileNotFoundError:
+        print(f'Directory used: {directory}')
+        return None, "No main.txt found in directory."
+    except PermissionError:
+        return None, 'Cannot complete operation, please check permissions'
+    except Exception as e:
+        return None, f"An error has occurred: {e}"
+
+
