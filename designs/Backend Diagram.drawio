@@ -5,7 +5,7 @@
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="W87RI8gLV-Hc2PDUYZC1-2" value="handle_file() [POST]" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="520" y="370" width="140" height="120" as="geometry" />
+          <mxGeometry x="520" y="370" width="140" height="190" as="geometry" />
         </mxCell>
         <mxCell id="W87RI8gLV-Hc2PDUYZC1-3" value="request.files (input)" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="W87RI8gLV-Hc2PDUYZC1-2" vertex="1">
           <mxGeometry y="30" width="140" height="30" as="geometry" />
@@ -15,6 +15,9 @@
         </mxCell>
         <mxCell id="W87RI8gLV-Hc2PDUYZC1-70" value="handle_processing (call)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="W87RI8gLV-Hc2PDUYZC1-2" vertex="1">
           <mxGeometry y="90" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-80" value="handle_display (call)&lt;div&gt;(Makes a GET call to this function when error=False&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="W87RI8gLV-Hc2PDUYZC1-2">
+          <mxGeometry y="120" width="140" height="70" as="geometry" />
         </mxCell>
         <mxCell id="W87RI8gLV-Hc2PDUYZC1-22" value="Frontend &amp;amp; User" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="860" y="150" width="200" height="90" as="geometry" />
@@ -164,12 +167,12 @@
         <mxCell id="oHJjCsBVPUf1ZacrA_TA-37" value="pre-process_file (call)" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="oHJjCsBVPUf1ZacrA_TA-35" vertex="1">
           <mxGeometry y="60" width="210" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="oHJjCsBVPUf1ZacrA_TA-39" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=-0.01;entryY=0.125;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="W87RI8gLV-Hc2PDUYZC1-70" target="oHJjCsBVPUf1ZacrA_TA-35" edge="1">
+        <mxCell id="oHJjCsBVPUf1ZacrA_TA-39" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.01;entryY=0.125;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="W87RI8gLV-Hc2PDUYZC1-70" target="oHJjCsBVPUf1ZacrA_TA-35" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="770" y="660" as="sourcePoint" />
             <mxPoint x="820" y="610" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="650" y="610" />
+              <mxPoint x="740" y="610" />
               <mxPoint x="900" y="610" />
               <mxPoint x="900" y="540" />
             </Array>
@@ -400,26 +403,26 @@
         <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-34" value="new save directory" style="whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-15">
           <mxGeometry x="280" y="200" width="100" height="112" as="geometry" />
         </mxCell>
-        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-40" value="error (output)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-15">
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-40" value="error (output)&lt;div&gt;If processing is successful, return False.&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-15">
           <mxGeometry x="440" y="40" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-58" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;noEdgeStyle=1;orthogonal=1;" edge="1" target="ZLIS8xJZUZ-bMLtUGgJW-34" source="ZLIS8xJZUZ-bMLtUGgJW-59" parent="ZLIS8xJZUZ-bMLtUGgJW-15">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="1780" y="2980" as="sourcePoint" />
-            <mxPoint x="1660" y="2990" as="targetPoint" />
+            <mxPoint x="1920" y="3260" as="sourcePoint" />
+            <mxPoint x="1800" y="3270" as="targetPoint" />
             <Array as="points">
               <mxPoint x="330" y="162" />
               <mxPoint x="330" y="188" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-59" value="&lt;div&gt;New File Directory&lt;/div&gt;&lt;div&gt;created by&lt;/div&gt;create-archive-directory call" style="whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-15">
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-59" value="&lt;div&gt;New Save Directory&lt;/div&gt;&lt;div&gt;created by&lt;/div&gt;create-archive-directory call" style="whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-15">
           <mxGeometry x="280" y="40" width="100" height="110" as="geometry" />
         </mxCell>
         <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-62" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;noEdgeStyle=1;orthogonal=1;" edge="1" target="ZLIS8xJZUZ-bMLtUGgJW-63" source="ZLIS8xJZUZ-bMLtUGgJW-34" parent="ZLIS8xJZUZ-bMLtUGgJW-15">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="1460" y="2640" as="sourcePoint" />
-            <mxPoint x="2230" y="4160" as="targetPoint" />
+            <mxPoint x="1600" y="2920" as="sourcePoint" />
+            <mxPoint x="2370" y="4440" as="targetPoint" />
             <Array as="points">
               <mxPoint x="352.5" y="324" />
               <mxPoint x="330" y="350" />
@@ -431,8 +434,8 @@
         </mxCell>
         <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-64" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;noEdgeStyle=1;orthogonal=1;" edge="1" target="ZLIS8xJZUZ-bMLtUGgJW-65" source="ZLIS8xJZUZ-bMLtUGgJW-34" parent="ZLIS8xJZUZ-bMLtUGgJW-15">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="1440" y="2600" as="sourcePoint" />
-            <mxPoint x="2230" y="4160" as="targetPoint" />
+            <mxPoint x="1580" y="2880" as="sourcePoint" />
+            <mxPoint x="2370" y="4440" as="targetPoint" />
             <Array as="points">
               <mxPoint x="307.5" y="324" />
               <mxPoint x="165" y="350" />
@@ -447,8 +450,8 @@
         </mxCell>
         <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-68" value="" style="endArrow=classic;html=1;rounded=0;noEdgeStyle=1;orthogonal=1;endFill=1;" edge="1" parent="ZLIS8xJZUZ-bMLtUGgJW-15" source="ZLIS8xJZUZ-bMLtUGgJW-67" target="ZLIS8xJZUZ-bMLtUGgJW-65">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="590" y="-120" as="sourcePoint" />
-            <mxPoint x="1160" y="1070.7106781186549" as="targetPoint" />
+            <mxPoint x="730" y="160" as="sourcePoint" />
+            <mxPoint x="1300" y="1350.7106781186549" as="targetPoint" />
             <Array as="points">
               <mxPoint x="200" y="324" />
               <mxPoint x="135" y="348" />
@@ -493,6 +496,21 @@
         </mxCell>
         <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-73" value="The text will correspond to the image name, hence the need for both as parameters" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="320" y="1390" width="220" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-79" value="create_archive_directory() creates entries in file-history" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-130" y="585" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-81" value="List" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1695" y="350" width="140" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-82" value="Item 1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-81">
+          <mxGeometry y="30" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-83" value="Item 2" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-81">
+          <mxGeometry y="60" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-84" value="Item 3" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-81">
+          <mxGeometry y="90" width="140" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
