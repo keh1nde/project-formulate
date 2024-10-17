@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0.1 Safari/605.1.15" version="24.7.17">
   <diagram name="Page-1" id="OKoSd6tLzu933onekmis">
-    <mxGraphModel dx="3630" dy="1153" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="2897" dy="659" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -539,16 +539,16 @@
         <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-83" value="save-path (param)" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-81">
           <mxGeometry y="60" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-229" value="requested_data (internal method)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-81">
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-258" value="file-list (array)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-81">
           <mxGeometry y="90" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-84" value="return_data (call)" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-81">
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-85" value="returned_data (output, array)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-81">
           <mxGeometry y="120" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-258" value="file-list (array)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-81">
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-84" value="return_data (call)" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-81">
           <mxGeometry y="150" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-85" value="returned_data (output, array)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-81">
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-229" value="requested_data (internal method)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-81">
           <mxGeometry y="180" width="140" height="30" as="geometry" />
         </mxCell>
         <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-87" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="ZLIS8xJZUZ-bMLtUGgJW-82" target="W87RI8gLV-Hc2PDUYZC1-49">
@@ -569,7 +569,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-97" value="return_data() [HELPER]" style="swimlane;startSize=20;horizontal=1;childLayout=flowLayout;flowOrientation=north;resizable=0;interRankCellSpacing=50;containerType=tree;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="1790" y="610" width="460" height="490" as="geometry" />
+          <mxGeometry x="1790" y="610" width="460" height="720" as="geometry" />
         </mxCell>
         <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-98" value="file-list (param)&lt;div&gt;save-path (param)&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-97">
           <mxGeometry x="82.5" y="40" width="110" height="40" as="geometry" />
@@ -579,8 +579,8 @@
         </mxCell>
         <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-201" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;noEdgeStyle=1;orthogonal=1;" edge="1" target="ZLIS8xJZUZ-bMLtUGgJW-202" source="ZLIS8xJZUZ-bMLtUGgJW-98" parent="ZLIS8xJZUZ-bMLtUGgJW-97">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="3320" y="3425" as="sourcePoint" />
-            <mxPoint x="3530" y="3610" as="targetPoint" />
+            <mxPoint x="3420" y="3625" as="sourcePoint" />
+            <mxPoint x="3630" y="3810" as="targetPoint" />
             <Array as="points">
               <mxPoint x="112.5" y="92" />
               <mxPoint x="70" y="118" />
@@ -592,21 +592,21 @@
         </mxCell>
         <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-250" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;noEdgeStyle=1;orthogonal=1;" edge="1" target="ZLIS8xJZUZ-bMLtUGgJW-251" source="ZLIS8xJZUZ-bMLtUGgJW-202" parent="ZLIS8xJZUZ-bMLtUGgJW-97">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="2185" y="1330" as="sourcePoint" />
-            <mxPoint x="5320" y="4220" as="targetPoint" />
+            <mxPoint x="2285" y="1530" as="sourcePoint" />
+            <mxPoint x="5420" y="4420" as="targetPoint" />
             <Array as="points">
               <mxPoint x="70" y="212" />
-              <mxPoint x="111.875" y="238" />
+              <mxPoint x="112.22222222222223" y="238" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-251" value="For each file name in file-list, find the path to the image" style="whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-97">
-          <mxGeometry x="61.875" y="250" width="100" height="70" as="geometry" />
+          <mxGeometry x="62.222222222222214" y="250" width="100" height="70" as="geometry" />
         </mxCell>
         <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-252" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;noEdgeStyle=1;orthogonal=1;" edge="1" target="ZLIS8xJZUZ-bMLtUGgJW-253" source="ZLIS8xJZUZ-bMLtUGgJW-98" parent="ZLIS8xJZUZ-bMLtUGgJW-97">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="2080" y="945" as="sourcePoint" />
-            <mxPoint x="2290" y="1130" as="targetPoint" />
+            <mxPoint x="2180" y="1145" as="sourcePoint" />
+            <mxPoint x="2390" y="1330" as="targetPoint" />
             <Array as="points">
               <mxPoint x="162.5" y="92" />
               <mxPoint x="205" y="118" />
@@ -617,9 +617,9 @@
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="205" y="212" />
-              <mxPoint x="191.875" y="225" />
-              <mxPoint x="191.875" y="345" />
-              <mxPoint x="174.375" y="358" />
+              <mxPoint x="192.22222222222223" y="225" />
+              <mxPoint x="192.22222222222223" y="345" />
+              <mxPoint x="175.46296296296296" y="358" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -628,16 +628,29 @@
         </mxCell>
         <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-255" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;noEdgeStyle=1;orthogonal=1;" edge="1" target="ZLIS8xJZUZ-bMLtUGgJW-256" source="ZLIS8xJZUZ-bMLtUGgJW-251" parent="ZLIS8xJZUZ-bMLtUGgJW-97">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="1940" y="970" as="sourcePoint" />
-            <mxPoint x="7110" y="4830" as="targetPoint" />
+            <mxPoint x="2040" y="1170" as="sourcePoint" />
+            <mxPoint x="7210" y="5030" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="111.875" y="332" />
-              <mxPoint x="129.375" y="358" />
+              <mxPoint x="112.22222222222223" y="332" />
+              <mxPoint x="130.46296296296296" y="358" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-256" value="For each file name in file-list, find the path to the image. Check if the file exists and return error if it does not." style="whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-97">
-          <mxGeometry x="101.875" y="370" width="100" height="100" as="geometry" />
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-256" value="For each file name in file-list, find the path to the image and save it to image-path.&amp;nbsp;&lt;div&gt;Check if the file exists and return error if it does not.&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-97">
+          <mxGeometry x="102.96296296296296" y="370" width="100" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-260" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;noEdgeStyle=1;orthogonal=1;" edge="1" target="ZLIS8xJZUZ-bMLtUGgJW-261" source="ZLIS8xJZUZ-bMLtUGgJW-256" parent="ZLIS8xJZUZ-bMLtUGgJW-97">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1962" y="1050" as="sourcePoint" />
+            <mxPoint x="9000" y="5640" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="152.96296296296296" y="522" />
+              <mxPoint x="152.96296296296296" y="548" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-261" value="Save both the read text and image path to an array and return.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Format:&lt;/div&gt;&lt;div&gt;[image-path, text]&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-97">
+          <mxGeometry x="102.96296296296296" y="560" width="100" height="140" as="geometry" />
         </mxCell>
         <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-125" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="ZLIS8xJZUZ-bMLtUGgJW-124" target="ZLIS8xJZUZ-bMLtUGgJW-82">
           <mxGeometry relative="1" as="geometry">
