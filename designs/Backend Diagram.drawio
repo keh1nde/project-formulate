@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0.1 Safari/605.1.15" version="24.7.17">
   <diagram name="Page-1" id="OKoSd6tLzu933onekmis">
-    <mxGraphModel dx="3630" dy="1152" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="2680" dy="512" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -531,7 +531,7 @@
           <mxGeometry x="-130" y="585" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-81" value="handle_display() [GET]" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1680" y="350" width="140" height="150" as="geometry" />
+          <mxGeometry x="1680" y="350" width="140" height="180" as="geometry" />
         </mxCell>
         <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-82" value="error (output)" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-81">
           <mxGeometry y="30" width="140" height="30" as="geometry" />
@@ -539,11 +539,14 @@
         <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-83" value="save-path (param)" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-81">
           <mxGeometry y="60" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-84" value="return_data (call)" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-81">
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-229" value="requested_data (internal method)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-81">
           <mxGeometry y="90" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-85" value="returned_data (output, array)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-81">
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-84" value="return_data (call)" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-81">
           <mxGeometry y="120" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-85" value="returned_data (output, array)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-81">
+          <mxGeometry y="150" width="140" height="30" as="geometry" />
         </mxCell>
         <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-87" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="ZLIS8xJZUZ-bMLtUGgJW-82" target="W87RI8gLV-Hc2PDUYZC1-49">
           <mxGeometry relative="1" as="geometry">
@@ -563,132 +566,52 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-97" value="return_data() [HELPER]" style="swimlane;startSize=20;horizontal=1;childLayout=flowLayout;flowOrientation=north;resizable=0;interRankCellSpacing=50;containerType=tree;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="1790" y="610" width="580" height="790" as="geometry" />
+          <mxGeometry x="1790" y="610" width="460" height="340" as="geometry" />
         </mxCell>
-        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-98" value="save-path (param)" style="whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-97">
-          <mxGeometry x="150" y="40" width="100" height="40" as="geometry" />
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-98" value="file-list (param)&lt;div&gt;save-path (param)&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-97">
+          <mxGeometry x="82.5" y="40" width="110" height="40" as="geometry" />
         </mxCell>
         <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-124" value="error (if error != None or False)&lt;div&gt;error=False when process ends without errors&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-97">
-          <mxGeometry x="440" y="40" width="120" height="120" as="geometry" />
+          <mxGeometry x="320" y="40" width="120" height="120" as="geometry" />
         </mxCell>
         <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-201" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;noEdgeStyle=1;orthogonal=1;" edge="1" target="ZLIS8xJZUZ-bMLtUGgJW-202" source="ZLIS8xJZUZ-bMLtUGgJW-98" parent="ZLIS8xJZUZ-bMLtUGgJW-97">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="2700" y="2185" as="sourcePoint" />
-            <mxPoint x="2910" y="2370" as="targetPoint" />
+            <mxPoint x="3220" y="3225" as="sourcePoint" />
+            <mxPoint x="3430" y="3410" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="200" y="94" />
-              <mxPoint x="200" y="118" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-202" value="Find relation.txt&lt;div&gt;Return error if it can&#39;t be found&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-97">
-          <mxGeometry x="150" y="130" width="100" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-207" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;noEdgeStyle=1;orthogonal=1;" edge="1" target="ZLIS8xJZUZ-bMLtUGgJW-208" source="ZLIS8xJZUZ-bMLtUGgJW-98" parent="ZLIS8xJZUZ-bMLtUGgJW-97">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="2620" y="2025" as="sourcePoint" />
-            <mxPoint x="2830" y="2210" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="170" y="92" />
+              <mxPoint x="112.5" y="92" />
               <mxPoint x="70" y="118" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-208" value="Find image-save-directory&lt;div&gt;Return error if it can&#39;t be found&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-97">
-          <mxGeometry x="20" y="130.5" width="100" height="69" as="geometry" />
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-202" value="Find relation.txt&lt;div&gt;Return error if it can&#39;t be found&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-97">
+          <mxGeometry x="20" y="130" width="100" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-209" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;noEdgeStyle=1;orthogonal=1;" edge="1" target="ZLIS8xJZUZ-bMLtUGgJW-210" source="ZLIS8xJZUZ-bMLtUGgJW-98" parent="ZLIS8xJZUZ-bMLtUGgJW-97">
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-250" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;noEdgeStyle=1;orthogonal=1;" edge="1" target="ZLIS8xJZUZ-bMLtUGgJW-251" source="ZLIS8xJZUZ-bMLtUGgJW-202" parent="ZLIS8xJZUZ-bMLtUGgJW-97">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="2560" y="1905" as="sourcePoint" />
-            <mxPoint x="2770" y="2090" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="230" y="92" />
-              <mxPoint x="330" y="118" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-210" value="Find text-save-directory&lt;div&gt;Return error if it can&#39;t be found&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-97">
-          <mxGeometry x="280" y="132.5" width="100" height="65" as="geometry" />
-        </mxCell>
-        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-211" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;noEdgeStyle=1;orthogonal=1;" edge="1" target="ZLIS8xJZUZ-bMLtUGgJW-212" source="ZLIS8xJZUZ-bMLtUGgJW-202" parent="ZLIS8xJZUZ-bMLtUGgJW-97">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="2530" y="1770" as="sourcePoint" />
-            <mxPoint x="4700" y="2980" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="200" y="212" />
-              <mxPoint x="200" y="238" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-222" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;noEdgeStyle=1;orthogonal=1;" edge="1" parent="ZLIS8xJZUZ-bMLtUGgJW-97" source="ZLIS8xJZUZ-bMLtUGgJW-212" target="ZLIS8xJZUZ-bMLtUGgJW-221">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="177.5" y="462" />
-              <mxPoint x="157.5" y="488" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-223" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;noEdgeStyle=1;orthogonal=1;" edge="1" parent="ZLIS8xJZUZ-bMLtUGgJW-97" source="ZLIS8xJZUZ-bMLtUGgJW-212" target="ZLIS8xJZUZ-bMLtUGgJW-219">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="222.5" y="462" />
-              <mxPoint x="242.5" y="488" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-212" value="Parse data in relation.txt and attempt to find corresponding images and text&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Return error if a pair cannot be found. If the data is found then continue with the request.&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-97">
-          <mxGeometry x="150" y="250" width="100" height="200" as="geometry" />
-        </mxCell>
-        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-218" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;noEdgeStyle=1;orthogonal=1;" edge="1" target="ZLIS8xJZUZ-bMLtUGgJW-219" source="ZLIS8xJZUZ-bMLtUGgJW-210" parent="ZLIS8xJZUZ-bMLtUGgJW-97">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="2370" y="1450" as="sourcePoint" />
-            <mxPoint x="4560" y="2700" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="330" y="212" />
-              <mxPoint x="297.5" y="225" />
-              <mxPoint x="297.5" y="475" />
-              <mxPoint x="287.5" y="488" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-226" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;noEdgeStyle=1;orthogonal=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="ZLIS8xJZUZ-bMLtUGgJW-97" source="ZLIS8xJZUZ-bMLtUGgJW-219" target="ZLIS8xJZUZ-bMLtUGgJW-225">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="265" y="602" />
-              <mxPoint x="222.5" y="628" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-219" value="For each request, read and copy data. Save to image[I]_text variable" style="whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-97">
-          <mxGeometry x="215" y="500" width="100" height="90" as="geometry" />
-        </mxCell>
-        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-220" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;noEdgeStyle=1;orthogonal=1;" edge="1" target="ZLIS8xJZUZ-bMLtUGgJW-221" source="ZLIS8xJZUZ-bMLtUGgJW-208" parent="ZLIS8xJZUZ-bMLtUGgJW-97">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="2270" y="1250" as="sourcePoint" />
-            <mxPoint x="4620" y="2820" as="targetPoint" />
+            <mxPoint x="2085" y="1130" as="sourcePoint" />
+            <mxPoint x="5220" y="4020" as="targetPoint" />
             <Array as="points">
               <mxPoint x="70" y="212" />
-              <mxPoint x="102.5" y="225" />
-              <mxPoint x="102.5" y="475" />
-              <mxPoint x="112.5" y="488" />
+              <mxPoint x="70" y="238" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-221" value="For each request, Save the full file path to image[I]image variable" style="whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-97">
-          <mxGeometry x="85" y="507" width="100" height="76" as="geometry" />
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-251" value="For each file name in file-list,&amp;nbsp;" style="whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-97">
+          <mxGeometry x="20" y="250" width="100" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-224" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;noEdgeStyle=1;orthogonal=1;" edge="1" target="ZLIS8xJZUZ-bMLtUGgJW-225" source="ZLIS8xJZUZ-bMLtUGgJW-221" parent="ZLIS8xJZUZ-bMLtUGgJW-97">
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-252" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;noEdgeStyle=1;orthogonal=1;" edge="1" target="ZLIS8xJZUZ-bMLtUGgJW-253" source="ZLIS8xJZUZ-bMLtUGgJW-98" parent="ZLIS8xJZUZ-bMLtUGgJW-97">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="2000" y="1090" as="sourcePoint" />
-            <mxPoint x="6410" y="3430" as="targetPoint" />
+            <mxPoint x="1980" y="745" as="sourcePoint" />
+            <mxPoint x="2190" y="930" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="135" y="602" />
-              <mxPoint x="177.5" y="628" />
+              <mxPoint x="162.5" y="92" />
+              <mxPoint x="205" y="118" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-225" value="Save the image-text pair to an array with the format:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;[image[I], image[I[_text&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-97">
-          <mxGeometry x="150" y="640" width="100" height="130" as="geometry" />
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-253" value="Check if text-file-save exists.&lt;div&gt;If not, return error&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-97">
+          <mxGeometry x="150" y="134.125" width="110" height="61.75" as="geometry" />
         </mxCell>
         <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-125" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="ZLIS8xJZUZ-bMLtUGgJW-124" target="ZLIS8xJZUZ-bMLtUGgJW-82">
           <mxGeometry relative="1" as="geometry">
@@ -716,6 +639,71 @@
             <mxGeometry x="-240" y="900" width="120" height="60" as="geometry" />
           </mxCell>
         </UserObject>
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-230" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;exitX=0.478;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="ZLIS8xJZUZ-bMLtUGgJW-231" target="ZLIS8xJZUZ-bMLtUGgJW-229">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1580" y="600" as="sourcePoint" />
+            <mxPoint x="1630" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-231" value="requested_data [METHOD]" style="swimlane;startSize=20;horizontal=1;childLayout=flowLayout;flowOrientation=north;resizable=0;interRankCellSpacing=50;containerType=tree;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="620" width="320" height="505" as="geometry" />
+        </mxCell>
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-232" value="save-path" style="whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-231">
+          <mxGeometry x="20" y="40" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-240" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;noEdgeStyle=1;orthogonal=1;" edge="1" source="ZLIS8xJZUZ-bMLtUGgJW-232" target="ZLIS8xJZUZ-bMLtUGgJW-241" parent="ZLIS8xJZUZ-bMLtUGgJW-231">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="70" y="92" />
+              <mxPoint x="70" y="118" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-241" value="Check if save-path/relation.txt exists&lt;div&gt;Return error if false&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-231">
+          <mxGeometry x="20" y="130" width="100" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-242" value="Error&lt;div&gt;return None if process succeeded&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-231">
+          <mxGeometry x="180" y="40" width="120" height="59" as="geometry" />
+        </mxCell>
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-246" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;noEdgeStyle=1;orthogonal=1;" edge="1" target="ZLIS8xJZUZ-bMLtUGgJW-247" source="ZLIS8xJZUZ-bMLtUGgJW-241" parent="ZLIS8xJZUZ-bMLtUGgJW-231">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1670" y="980" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="70" y="227" />
+              <mxPoint x="70" y="253" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-247" value="Parse text in relations.txt, and append each image-text tuple to an array" style="whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-231">
+          <mxGeometry x="20" y="265" width="100" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-248" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;noEdgeStyle=1;orthogonal=1;" edge="1" target="ZLIS8xJZUZ-bMLtUGgJW-249" source="ZLIS8xJZUZ-bMLtUGgJW-247" parent="ZLIS8xJZUZ-bMLtUGgJW-231">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1630" y="1035" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="70" y="362" />
+              <mxPoint x="70" y="388" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-249" value="Once succeeded, return the array. Return None as error" style="whiteSpace=wrap;html=1;" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-231">
+          <mxGeometry x="20" y="400" width="100" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-244" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.711;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="ZLIS8xJZUZ-bMLtUGgJW-242" target="ZLIS8xJZUZ-bMLtUGgJW-82">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1480" y="480" as="sourcePoint" />
+            <mxPoint x="1580" y="480" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1580" y="600" />
+              <mxPoint x="1580" y="401" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZLIS8xJZUZ-bMLtUGgJW-245" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Error Handling&lt;/font&gt;" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="ZLIS8xJZUZ-bMLtUGgJW-244">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-28" as="offset" />
+          </mxGeometry>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
