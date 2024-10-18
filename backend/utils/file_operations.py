@@ -1,6 +1,6 @@
 import os
 import shutil
-
+import json
 from flask import request
 import time
 from werkzeug.utils import secure_filename
@@ -29,7 +29,7 @@ def create_directory(file_directory):
 
 def save_uploaded_file(destination):
     """ Saves uploaded files in queue """
-    create_directory(destination)
+    create_directory(destination) # Remove
     if 'file' not in request.files:
         return None, 'No file found.'
     file = request.files['file']
@@ -54,15 +54,15 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-def initialize_cache(dir_name):
+def initialize_cache():
     """Initializes a cache for use with the backend"""
     required_root_files = ['file-queue', 'file-uploads', 'tf_save']
     try:
-        error = create_directory(dir_name)
+        error = create_directory("cache")
         if error:
             return error
         for root_file in required_root_files:
-            n_path = os.path.join(dir_name, root_file)
+            n_path = os.path.join("cache", root_file)
             os.makedirs(n_path)
         return None
     except Exception as e:
@@ -91,14 +91,14 @@ def cleanup_cache(directory):
         return f"An error has occurred: {e}"
 
 
-def move_to(file_name, destination):
+def move_to(file_directory, destination):
     """Moves specified file into specified directory"""
-    if not os.path.exists(file_name):
-        return None, 'Backend: Path does not exist, please check name'
+    if not os.path.exists(file_directory):
+        return None, f'Backend: Path {file_directory }does not exist, try again.'
     elif not os.path.exists(destination):
-        return None, 'Backend: Path does not exist'
+        return None, f'Backend: Path {destination} does not exist'
     else:
-        return os.rename(file_name, destination), None
+        return os.rename(file_directory, destination), None
 
 
 """ History getters and setters """
@@ -107,7 +107,7 @@ def move_to(file_name, destination):
 def create_archive_directory(destination, dir_name):
     """Creates and returns an archive directory for use with history."""
     try:
-        required_path_files = ['image-cache', 'data.txt', 'main.txt']
+        required_path_files = ['image-save', 'relation.txt', 'main.txt']
 
         if dir_name is None:
             dir_name = 'Untitled'
@@ -150,19 +150,19 @@ def read_image_history(image_directory):
         return None, f"An Error has occurred: {e}"
 
 
-def write_data(directory, image_name, file_name, data):
+def write_data(file_history, image_name, text_file_name, save_name):
+    create_archive_directory(file_history, save_name) # Create new save
     """When the pre-processor & processor are done with their work, they will write to the file cache using
     this helper file"""
     try:
-        f = open(directory, "a")
-        f.write(f"Image: {image_name}\n")
-        f.write(f"Extracted Text for {image_name}: ")
-        f.write(f"{data}\n")
-        return directory, None
+        path = os.path.join(file_history, 'relation.txt')
+        with open(file_history, 'w') as file:
+            json.dump(image_name, text_file_name)
+        return None, None
     except FileNotFoundError:
-        return None, "Directory does not exist"
+        return None, "A directory does not exist. Please check all and try again."
     except PermissionError:
-        return None, "Cannot complete operations, please check permissions"
+        return None, "Cannot write data, please check permissions and try again"
     except Exception as e:
         return None, f"An error has occurred: {e}"
 
