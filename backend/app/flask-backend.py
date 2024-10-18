@@ -12,6 +12,11 @@ QUEUE_CACHE = '/cache/queue-cache'
 TF_SAVE = '/cache/text-file_save'
 
 
+@app.route('/init', method=['POST'])
+def initialize():
+    pass
+
+
 @app.route('/upload', method=['POST'])
 def handle_file():
     if request.method == 'POST':
@@ -60,5 +65,7 @@ def handle_history():
 def generate_error_response(message):
     return jsonify({'success': False, 'error': message}), 400
 
+
 """Returns a JSON response for errors"""
+
 
