@@ -1,19 +1,50 @@
 import os
 import cv2
 import pytesseract
-from backend.utils.file_operations import create_directory, write_data
+from backend.utils.file_operations import create_directory, create_archive_directory, write_data, move_to
 
 
-def preprocess_image(file_directory, file_cache):
-    if not os.path.exists(file_directory):
-        return None, f"Preprocessor: File directory {file_directory} does not exist"
-    if not os.path.exists(file_cache):
-        return None, f"Preprocessor: File directory {file_cache} does not exist"
+def extract_text(image_path):
+    """ Extracts text using TesseractOCR """
+    try:
+        text = pytesseract.image_to_string(image_path, lang='eng', config='--psm 6')
 
-    files = os.listdir(file_directory)
-    for file in files:
-        try:
-            img = cv2.imread(os.path.join(file_directory, file))
+        write_data()
+
+
+    except FileNotFoundError:
+        return None, f"{image_path} not found."
+    except PermissionError:
+        return None, f"Unable to extract text from file. Please check permissions"
+
+
+
+
+def preprocess_image(upload_cache, queue_cache, edited_files_directory, image_save_directory):
+    error = ''
+    """Moves image files from upload_cache to queue_cache, preprocesses them using Open CV, then passes them on for text extraction."""
+    try:
+        # Assume upload_cache = cache/file-upload
+        # Assume queue_cache = cache/file-queue
+        if not queue_cache:
+            return None, f"File directory {queue_cache} not found."
+        if not upload_cache:
+            return None, f"File directory {upload_cache} not found."
+        if not edited_files_directory:
+            return None, f"File directory {edited_files_directory} not found."
+        if not image_save_directory:
+            return None, f"File directory {image_save_directory} not found."
+
+        # Moving from uploads to cache
+        files = os.listdir(upload_cache)
+        for file in files:
+            path = os.path.join(upload_cache, file)
+            move_to(path, queue_cache)
+
+        # Processing
+        files = os.listdir(queue_cache)
+        for file in files:
+            img = cv2.imread(os.path.join(queue_cache, file))
             # Gray-scaling:
             img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
@@ -28,43 +59,19 @@ def preprocess_image(file_directory, file_cache):
             opening = cv2.morphologyEx(img, cv2.MORPH_OPEN, kernel, iterations=1)
             invert = 255 - opening
 
-            # We save the image to cache/filecache
-            # cv2.imwrite(os.path.join(FILE_CACHE, "image.jpg"), invert)
+            save_path = os.path.join(edited_files_directory, file)
+            cv2.imwrite(save_path, invert)
 
-            cache_path = os.path.join(file_cache, file)
-            cv2.imwrite(cache_path, invert)
+        # Call extract_text when all files are processed
 
-            path = os.path.join(file_directory, file_cache)
-            data, error = extract_text(path), None
-            if error:
-                return None, error
-
-            result, error = write_data(directory=file_cache, image_name=file, file_name="data.txt", data=data)
-
-            if error:
-                return None, error
-        except Exception as e:
-            return None, f"An error has occurred: {e}"
-
-        """
-        @:parameter file_directory: Path to File
-        Pre-processes images
-        """
+        return None, error
 
 
-"""
-Extracts text using TesseractOCR
-"""
 
-
-def extract_text(image_path):
-    try:
-        # Use pytesseract to get data
-        text = pytesseract.image_to_string(image_path, lang='eng', config='--psm 6')
-
-        if not text:
-            return None, None
-
-        return text, None
+    except FileNotFoundError:
+        return None, f" File not found, please try again"
+    except PermissionError:
+        return None, "Unable to complete pre-processing. Please check your permissions and try again."
     except Exception as e:
         return None, f"An error has occurred: {e}"
+
