@@ -3,6 +3,8 @@ from flask import request
 import time
 from werkzeug.utils import secure_filename
 import os
+import yaml
+import json
 
 # <<< Begin Directory Operations >>>
 def create_directory(file_directory):
@@ -106,7 +108,7 @@ def read_image_history(image_directory):
     except Exception as e:
         return None, f"An Error has occurred: {e}"
 
-def read_data(directory): #  Needs to be rewritten using JSON
+def old_write_data(directory): # Needs to be rewritten using YAML
     try:
         files = os.path.join(directory, 'data.txt')
         # Parse the file for details
@@ -117,19 +119,29 @@ def read_data(directory): #  Needs to be rewritten using JSON
     except Exception as e:
         return None, f"An error has occurred: {e}"
 
-def read_details(directory): # Needs to be rewritten using YAML
+def write_config(directory, save_name, ): # As of 11/14/24, currently in progress
+    pass
+
+
+def load_config(directory):
+    # Config file should contain the name of the file,
+    # the dates in which it was created and last modified.
     try:
-        files = os.path.join(directory, 'main.txt')
-        # Parse the file for details
-    except FileNotFoundError:
-        print(f'Directory used: {directory}')
-        return None, "No main.txt found in directory."
+        config_filename = f"{directory}_config.yaml"
+
+        with open(config_filename, 'r') as file:
+            config = yaml.safe_load(file)
+        return config, False
+    except not os.path.exists(directory):
+        return None, ("Backend (read_config): An error has occurred whilst"
+                      " attempting to open directory. Please try again later.")
     except PermissionError:
-        return None, 'Cannot complete operation, please check permissions'
+        return None, "Backend (read_config): An error has occurred, please check permissions and try again."
     except Exception as e:
-        return None, f"An error has occurred: {e}"
+        return None, f"Backend (read_config): An error has occurred: {e}"
 
 # <<< End File Read Operations >>>
+
 
 # <<< Begin File Write Operations >>>
 
