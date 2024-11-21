@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.1 Safari/605.1.15" version="24.8.8">
   <diagram name="Page-1" id="ClpgB7AAdrrCml1ry-PD">
-    <mxGraphModel dx="1026" dy="692" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1930" dy="728" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -8,18 +8,18 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="gOCm8S-VfS8fXB6XK8PX-3" value="End User (via frontend)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="45" y="100" width="155" height="40" as="geometry" />
+          <mxGeometry x="-190" y="110" width="155" height="40" as="geometry" />
         </mxCell>
         <mxCell id="gOCm8S-VfS8fXB6XK8PX-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="gOCm8S-VfS8fXB6XK8PX-4" target="gOCm8S-VfS8fXB6XK8PX-5">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="748" y="80" />
-              <mxPoint x="438" y="80" />
+              <mxPoint x="513" y="90" />
+              <mxPoint x="203" y="90" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="gOCm8S-VfS8fXB6XK8PX-4" value="Storage" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="670" y="100" width="155" height="40" as="geometry" />
+          <mxGeometry x="435" y="110" width="155" height="40" as="geometry" />
         </mxCell>
         <mxCell id="gOCm8S-VfS8fXB6XK8PX-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="gOCm8S-VfS8fXB6XK8PX-5" target="gOCm8S-VfS8fXB6XK8PX-4">
           <mxGeometry relative="1" as="geometry" />
@@ -27,36 +27,42 @@
         <mxCell id="gOCm8S-VfS8fXB6XK8PX-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="gOCm8S-VfS8fXB6XK8PX-5" target="gOCm8S-VfS8fXB6XK8PX-3">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="438" y="160" />
-              <mxPoint x="123" y="160" />
+              <mxPoint x="203" y="170" />
+              <mxPoint x="-112" y="170" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="gOCm8S-VfS8fXB6XK8PX-5" value="Server Backend" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="360" y="100" width="155" height="40" as="geometry" />
+          <mxGeometry x="125" y="110" width="155" height="40" as="geometry" />
         </mxCell>
         <mxCell id="gOCm8S-VfS8fXB6XK8PX-11" value="(Through Backend Methods)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="490" y="50" width="200" height="30" as="geometry" />
+          <mxGeometry x="255" y="60" width="200" height="30" as="geometry" />
         </mxCell>
         <mxCell id="gOCm8S-VfS8fXB6XK8PX-13" value="At this time, storage is likely to be local and temporary." style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="673.5" y="150" width="148" height="60" as="geometry" />
+          <mxGeometry x="438.5" y="160" width="148" height="60" as="geometry" />
         </mxCell>
         <mxCell id="gOCm8S-VfS8fXB6XK8PX-15" value="(History getter and storage methods)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="170" y="170" width="220" height="30" as="geometry" />
+          <mxGeometry x="-65" y="180" width="220" height="30" as="geometry" />
         </mxCell>
         <mxCell id="gOCm8S-VfS8fXB6XK8PX-25" value="Backend Server" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="410" y="390" width="340" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="gOCm8S-VfS8fXB6XK8PX-27" value="" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/database.svg;" vertex="1" parent="1">
-          <mxGeometry x="50" y="253" width="50" height="37" as="geometry" />
-        </mxCell>
         <mxCell id="gOCm8S-VfS8fXB6XK8PX-28" value="" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/generic_server.svg;" vertex="1" parent="1">
           <mxGeometry x="554.8" y="290" width="50.4" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="gOCm8S-VfS8fXB6XK8PX-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="gOCm8S-VfS8fXB6XK8PX-29" target="gOCm8S-VfS8fXB6XK8PX-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gOCm8S-VfS8fXB6XK8PX-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="gOCm8S-VfS8fXB6XK8PX-29" target="gOCm8S-VfS8fXB6XK8PX-30">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="gOCm8S-VfS8fXB6XK8PX-29" value="handle_submit()" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="380" y="510" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="gOCm8S-VfS8fXB6XK8PX-30" value="handle_history" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="gOCm8S-VfS8fXB6XK8PX-64" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gOCm8S-VfS8fXB6XK8PX-30" target="gOCm8S-VfS8fXB6XK8PX-63">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gOCm8S-VfS8fXB6XK8PX-30" value="handle_history()" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="660" y="510" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="gOCm8S-VfS8fXB6XK8PX-31" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="gOCm8S-VfS8fXB6XK8PX-29" target="gOCm8S-VfS8fXB6XK8PX-25">
@@ -71,23 +77,74 @@
             <mxPoint x="630" y="480" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="gOCm8S-VfS8fXB6XK8PX-33" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="gOCm8S-VfS8fXB6XK8PX-35" target="gOCm8S-VfS8fXB6XK8PX-29">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="440" y="670" as="sourcePoint" />
-            <mxPoint x="470" y="610" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="gOCm8S-VfS8fXB6XK8PX-34" value="Frontend and User" style="swimlane;whiteSpace=wrap;html=1;opacity=10;" vertex="1" parent="1">
-          <mxGeometry x="10" y="320" width="200" height="200" as="geometry" />
+          <mxGeometry x="-150" y="320" width="130" height="200" as="geometry" />
         </mxCell>
         <mxCell id="xDwhEg7lajCBHULK3OOE-2" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://img.freepik.com/free-vector/user-blue-gradient_78370-4692.jpg;" parent="gOCm8S-VfS8fXB6XK8PX-34" vertex="1">
-          <mxGeometry x="60" y="50" width="80" height="80" as="geometry" />
+          <mxGeometry x="25" y="50" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="xDwhEg7lajCBHULK3OOE-4" value="End User&lt;div&gt;(via frontend)&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="gOCm8S-VfS8fXB6XK8PX-34" vertex="1">
-          <mxGeometry x="50" y="130" width="100" height="30" as="geometry" />
+          <mxGeometry x="15" y="130" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="gOCm8S-VfS8fXB6XK8PX-35" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="380" y="680" width="120" height="60" as="geometry" />
+        <mxCell id="gOCm8S-VfS8fXB6XK8PX-53" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gOCm8S-VfS8fXB6XK8PX-39" target="gOCm8S-VfS8fXB6XK8PX-52">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gOCm8S-VfS8fXB6XK8PX-39" value="handle_processing()" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="700" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gOCm8S-VfS8fXB6XK8PX-41" value="Cleans files from the request and moves them to the upload cache using save_uploaded_file(). After, calls handle_processing()" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="160" y="510" width="210" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="gOCm8S-VfS8fXB6XK8PX-46" value="Moves files from upload cache to queue, preprocesses the files and extracts data. The text data along with raw and processed images are saved to disk" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="130" y="685" width="240" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="gOCm8S-VfS8fXB6XK8PX-51" value="(if processing is successful)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="530" y="505" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gOCm8S-VfS8fXB6XK8PX-52" value="write_data()" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="880" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gOCm8S-VfS8fXB6XK8PX-54" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="gOCm8S-VfS8fXB6XK8PX-34" target="gOCm8S-VfS8fXB6XK8PX-25">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="420" as="sourcePoint" />
+            <mxPoint x="340" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gOCm8S-VfS8fXB6XK8PX-55" value="The data used and generated in handle_processing() is passed to write_data() in order to write to disk&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;The traits (i.e. Name of file, date the save was made, etc) and the relations (text data name : image name ) will be written in JSON&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;All of these will be passed to the frontend to be displayed.&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="160" y="778.75" width="180" height="262.5" as="geometry" />
+        </mxCell>
+        <mxCell id="gOCm8S-VfS8fXB6XK8PX-57" value="File Storage" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="390" width="340" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gOCm8S-VfS8fXB6XK8PX-58" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="gOCm8S-VfS8fXB6XK8PX-25" target="gOCm8S-VfS8fXB6XK8PX-57">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="850" y="400" as="sourcePoint" />
+            <mxPoint x="900" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gOCm8S-VfS8fXB6XK8PX-60" value="" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/database.svg;" vertex="1" parent="1">
+          <mxGeometry x="1322.7" y="310" width="94.59" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="gOCm8S-VfS8fXB6XK8PX-61" value="Passes requested save data to the frontend to be displayed" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="790" y="525" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gOCm8S-VfS8fXB6XK8PX-68" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gOCm8S-VfS8fXB6XK8PX-63" target="gOCm8S-VfS8fXB6XK8PX-67">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gOCm8S-VfS8fXB6XK8PX-63" value="read_config()" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="700" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gOCm8S-VfS8fXB6XK8PX-65" value="Both functions receive the identifier for the requested data.&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;read_config() will read the JSON file for both the traits and the relations. It will be processed and sent to the frontend.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;read_config() MUST send data through handle_history()&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="790" y="623.75" width="140" height="212.5" as="geometry" />
+        </mxCell>
+        <mxCell id="gOCm8S-VfS8fXB6XK8PX-67" value="retrieve_data()" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="880" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gOCm8S-VfS8fXB6XK8PX-69" value="To be done. This function will send the images to the frontend, if needed.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;retrieve_data() MUST send data through handle_history()&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="790" y="865" width="178" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="gOCm8S-VfS8fXB6XK8PX-73" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;&amp;lt;Tech Stack&amp;gt;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;4&quot;&gt;Frontend:&amp;nbsp;Javascript and React, along with vanilla CSS for styling (for now) and Axios for API calls.&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;4&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;4&quot;&gt;Backend: Python and Flask&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;4&quot;&gt;Data Processing: pytesseract (for NLP) and OpenCV (for image pre-processing)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;4&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;4&quot;&gt;Storage: SQLite for it&#39;s key value stores&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="760" y="20" width="330" height="250" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
