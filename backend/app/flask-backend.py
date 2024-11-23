@@ -1,8 +1,8 @@
 import os
 
 from flask import Flask, render_template, request, redirect, url_for, jsonify
-from backend.utils.file_operations import allowed_file, create_directory, cleanup_cache, save_uploaded_file, move_to
-from backend.utils.ocr_operations import preprocess_image, extract_text
+from backend.utils.file_operations import create_directory, cleanup_cache, move_to, initialize_cache
+# from backend.utils.ocr_operations
 
 app = Flask(__name__)
 
@@ -14,19 +14,29 @@ TF_SAVE = '/cache/text-file_save'
 
 @app.route('/init', method=['POST'])
 def initialize():
-    pass
+    success, error = None, None
+    """Function to initialize web app"""
+    os.mkdir("cache")
+    initialize_cache(FILE_CACHE)
+    if success:
+        pass # We send a JSON response to the frontend that cache has been generated
+    if error:
+        generate_error_response(error)
+
 
 
 @app.route('/upload', method=['POST'])
 def handle_file():
+    error = ""
     if request.method == 'POST':
-        file_path, error = save_uploaded_file(destination=UPLOAD_CACHE)
+        # file_path, error = save_uploaded_file(destination=UPLOAD_CACHE)
         if error:
             return generate_error_response(error)
     handle_processing()
 
 
 def handle_processing():
+    error, success = None, None
     global FILE_CACHE, QUEUE_CACHE, TF_SAVE, UPLOAD_CACHE
     """ Error handling """
     if not QUEUE_CACHE or not UPLOAD_CACHE:
@@ -38,7 +48,7 @@ def handle_processing():
     files = os.listdir(UPLOAD_CACHE)
     for file in files:
         file = os.path.basename(file)
-        file, error = move_to(file, QUEUE_CACHE)
+        success, error = move_to(file, QUEUE_CACHE)
         if error:
             return generate_error_response(error)
 
@@ -46,11 +56,13 @@ def handle_processing():
     files = os.listdir(QUEUE_CACHE)
     for file in files:
         preprocess_image(file)
-    # Return success
+    if success: # When everything without error, we pass to error display
+        handle_display()
 
 
 @app.route('/display', method=['GET'])
 def handle_display():
+    """ Handles sending of text and images for use"""
     pass
 
 
@@ -59,6 +71,7 @@ def handle_display():
 
 @app.route('/history', method=['GET'])
 def handle_history():
+    """ Handles history of jobs, and can call handle_display to handle work"""
     pass
 
 
