@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.1 Safari/605.1.15" version="24.8.8">
   <diagram name="Page-1" id="ClpgB7AAdrrCml1ry-PD">
-    <mxGraphModel dx="2057" dy="814" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2133" dy="864" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -134,6 +134,80 @@
         </mxCell>
         <mxCell id="gOCm8S-VfS8fXB6XK8PX-73" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;&amp;lt;Tech Stack&amp;gt;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;4&quot;&gt;Frontend:&amp;nbsp;Javascript and React, along with vanilla CSS for styling (for now) and Axios for API calls.&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;4&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;4&quot;&gt;Backend: Python and Flask&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;4&quot;&gt;Data Processing: pytesseract (for NLP) and OpenCV (for image pre-processing)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;4&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;4&quot;&gt;Storage: SQLite for it&#39;s key value stores&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="760" y="20" width="330" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="x1ZL-19_iISzuvrsEnVw-3" value="" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/folder.svg;" vertex="1" parent="1">
+          <mxGeometry x="-279" y="1190" width="58.4" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="x1ZL-19_iISzuvrsEnVw-4" value="File Payload" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-280" y="1290" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="x1ZL-19_iISzuvrsEnVw-5" value="Initial Preprocessing &amp;amp; File Transfer" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-79" y="1200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="x1ZL-19_iISzuvrsEnVw-6" value="Queue Path" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-79" y="1270" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="x1ZL-19_iISzuvrsEnVw-11" value="edited_directory" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-74" y="1300" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="x1ZL-19_iISzuvrsEnVw-12" value="image_save_directory" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-89" y="1328" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="x1ZL-19_iISzuvrsEnVw-14" value="A clean File Payload is gotten from the frontend." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="175.79999999999995" y="1200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="x1ZL-19_iISzuvrsEnVw-15" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="x1ZL-19_iISzuvrsEnVw-5" target="x1ZL-19_iISzuvrsEnVw-14">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="171" y="1380" as="sourcePoint" />
+            <mxPoint x="221" y="1330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x1ZL-19_iISzuvrsEnVw-16" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="x1ZL-19_iISzuvrsEnVw-14" target="x1ZL-19_iISzuvrsEnVw-17">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="431" y="1350" as="sourcePoint" />
+            <mxPoint x="501" y="1230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x1ZL-19_iISzuvrsEnVw-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="x1ZL-19_iISzuvrsEnVw-17" target="x1ZL-19_iISzuvrsEnVw-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x1ZL-19_iISzuvrsEnVw-17" value="The file is edited to ensure accurate results&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;The edited file can be moved to another directory to be viewed, reprocessed.&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="451" y="1162.5" width="120" height="135" as="geometry" />
+        </mxCell>
+        <mxCell id="x1ZL-19_iISzuvrsEnVw-18" value="params: cache/queue" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="165.79999999999995" y="1270" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="x1ZL-19_iISzuvrsEnVw-29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="x1ZL-19_iISzuvrsEnVw-20" target="x1ZL-19_iISzuvrsEnVw-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x1ZL-19_iISzuvrsEnVw-20" value="Once the queue is empty, the edited files are parsed for data.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;write_data must be called for each file within the edited_directory&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="731" y="1150" width="120" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="x1ZL-19_iISzuvrsEnVw-22" value="identifier" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-54" y="1358" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="x1ZL-19_iISzuvrsEnVw-23" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="x1ZL-19_iISzuvrsEnVw-3" target="x1ZL-19_iISzuvrsEnVw-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-169" y="1240" as="sourcePoint" />
+            <mxPoint x="-129" y="1270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x1ZL-19_iISzuvrsEnVw-24" value="param: image_path&lt;div&gt;param: identifier&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="726" y="1315" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="x1ZL-19_iISzuvrsEnVw-26" value="param: edited_directory" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="436" y="1298" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="x1ZL-19_iISzuvrsEnVw-32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="x1ZL-19_iISzuvrsEnVw-28" target="x1ZL-19_iISzuvrsEnVw-34">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1131" y="1230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x1ZL-19_iISzuvrsEnVw-28" value="Once all files are properly processed, we return true to handle_submit()" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="981" y="1200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="x1ZL-19_iISzuvrsEnVw-34" value="The rest of the server" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/generic_server.svg;" vertex="1" parent="1">
+          <mxGeometry x="1231" y="1185" width="50.4" height="90" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
