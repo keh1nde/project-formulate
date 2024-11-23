@@ -119,13 +119,23 @@ def old_write_data(directory): # Needs to be rewritten using YAML
     except Exception as e:
         return None, f"An error has occurred: {e}"
 
-def write_config(directory, save_name, ): # As of 11/14/24, currently in progress
-    pass
+def write_config(directory, save_name, image_dir, text_dir, ): # Could "image_dir" and "text_dir" both be arrays?
+    # Config file should contain the name of the file,
+    # the dates in which it was created and last modified.
+    try:
+        config_filename = f"{directory}_image-text-map.json"
+
+        image_text_map = {
+            image_dir : text_dir
+        }
+
+        with open(config_filename, 'w') as file:
+            json.dump(image_text_map, config_filename, indent=4)
+    except FileNotFoundError:
+        return None, "Backend (write_config): No image_text_map.json found in directory"
 
 
 def load_config(directory):
-    # Config file should contain the name of the file,
-    # the dates in which it was created and last modified.
     try:
         config_filename = f"{directory}_config.yaml"
 
@@ -172,30 +182,4 @@ def move_to(file_name, destination):
         return None, 'Backend: Path does not exist'
     else:
         return os.rename(file_name, destination), None
-
-def allowed_file(filename):
-    allowed_extension = {'png', 'jpg', 'jpeg', 'gif'}
-    """
-    Determines if the file is safe
-    """
-    return '.' in filename and \
-        filename.rsplit('.', 1)[1].lower() in allowed_extension
-
-def save_uploaded_file(destination): # Should be moved to a save related area
-    """ Saves uploaded files in queue """
-    create_directory(destination)
-    if 'file' not in request.files:
-        return None, 'No file found.'
-    file = request.files['file']
-    if file.filename == '':
-        return None, 'No file selected.'
-    if not allowed_file(file.filename):
-        return None, 'Path contains a file that is not allowed.'
-    # Securing filename
-    filename = secure_filename(file.filename)
-    file_path = os.path.join(destination, filename)
-
-    file.save(file_path)
-
-    return file_path, None
 
